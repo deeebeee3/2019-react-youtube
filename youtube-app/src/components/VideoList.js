@@ -4,7 +4,7 @@ import VideoItem from './VideoItem';
 const VideoList = ({videos}) => { //use destructuring to get videos from props
 
     const renderedList = videos.map((video) =>{
-        return <VideoItem />;
+        return <VideoItem video={video} />;
     });
 
     return(
