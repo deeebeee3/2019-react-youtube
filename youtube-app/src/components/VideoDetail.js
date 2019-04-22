@@ -2,10 +2,17 @@ import React from "react";
 
 //use destructuring to get videos from props
 const VideoDetail = ({ video }) => {
-    if(!video){
-        return <div>Loading...</div>;
-    }
-  return <div>{video.snippet.title}</div>;
+  if (!video) {
+    return <div>Loading...</div>;
+  }
+  return (
+    <div>
+      <div className="ui segment">
+        <h4 className="ui header">{video.snippet.title}</h4>
+        <p>{video.snippet.description}</p>
+      </div>
+    </div>
+  );
 };
 
 export default VideoDetail;
