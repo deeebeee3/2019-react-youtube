@@ -22,7 +22,7 @@ class App extends React.Component {
       }
     });
 
-    console.log(response);
+    //console.log(response);
     this.setState({
       videos: response.data.items,
       selectedVideo: response.data.items[0]
@@ -31,7 +31,7 @@ class App extends React.Component {
 
   //use arrow functions to not lose context
   onVideoSelect = video => {
-    console.log("from the app!", video);
+    //console.log("from the app!", video);
     this.setState({ selectedVideo: video });
   };
 
