@@ -10,6 +10,10 @@ class App extends React.Component {
     selectedVideo: null
   };
 
+  componentDidMount(){
+    this.onTermSubmit('electric cars');
+  }
+
   //use arrow functions to not lose context
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
