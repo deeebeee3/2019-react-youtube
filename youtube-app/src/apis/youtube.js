@@ -1,6 +1,7 @@
+import axios from 'axios';
 const KEY = 'AIzaSyBV73CDTcohnaXNqZoMsYEpKrkWabdzvqA';
 
-export default AudioContextOptions.create({
+export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
     params:{
         part : 'snippet',
