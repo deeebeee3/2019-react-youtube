@@ -5,9 +5,11 @@ import youtube from "../apis/youtube";
 
 class App extends React.Component {
   state = {
-    videos: []
+    videos: [],
+    selectedVideo: null
   };
 
+  //use arrow functions to not lose context
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
@@ -16,15 +18,22 @@ class App extends React.Component {
     });
 
     console.log(response);
-
     this.setState({ videos: response.data.items });
+  };
+
+  //use arrow functions to not lose context
+  onVideoSelect = video => {
+    console.log("from the app!", video);
   };
 
   render() {
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={this.onVideoSelect}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
